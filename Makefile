@@ -1,18 +1,19 @@
 
 
-INCLUDES = -Iinclude
-LIBS =
-FLAGS = -g
+INCLUDE_DIR = -Iinclude -I/home/gq/Documents/github/caffe/include
+LIBS = -lopencv_core -lopencv_highgui -lcaffe
+LIB_DIR = -L/home/gq/Documents/github/caffe/build/lib
+FLAGS = -g -DCPU_ONLY
 SRCS=$(wildcard  src/*.cpp)
 OBJS=$(SRCS:%.cpp=%.o)
 TARGET = train
 
 
 $(TARGET) : $(OBJS)
-	g++ $(OBJS) $(FLAGS) $(LIBS) -o $(TARGET)
+	g++ $(OBJS) $(FLAGS) $(LIB_DIR) $(LIBS) -o $(TARGET)
 
 $(OBJS) : %.o : %.cpp
-	g++ -c $(INCLUDES) $(LIBS) $(FLAGS) $< -o $@
+	g++ -c $(INCLUDE_DIR) $(LIB_DIR) $(LIBS) $(FLAGS) $< -o $@
 
 
 
