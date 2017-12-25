@@ -1,7 +1,7 @@
 
 
 INCLUDE_DIR = -Iinclude -I/home/gq/Documents/github/caffe/include
-LIBS = -lopencv_core -lopencv_highgui -lcaffe
+LIBS = -lopencv_core -lopencv_highgui -lcaffe -lboost_system
 LIB_DIR = -L/home/gq/Documents/github/caffe/build/lib
 FLAGS = -g -DCPU_ONLY
 SRCS=$(wildcard  src/*.cpp)

@@ -1,6 +1,7 @@
 #include "Trainer.h"
 
 #include "opencv2/highgui/highgui.hpp"
+//#include "caffe/caffe.hpp"
 #include <iostream>
 
 
@@ -8,7 +9,7 @@
 namespace gg {
 
 Trainer::Trainer() {
-
+ 	caffe::Caffe::set_mode(caffe::Caffe::CPU);
 	m_net = new caffe::Net<float>("net.pt", caffe::TRAIN);
 }	
 

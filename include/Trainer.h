@@ -2,7 +2,8 @@
 #define __GG_TRAINER__HEADER__
 
 #include "opencv2/core/core.hpp"
-#include "caffe/net.hpp"
+//#include "caffe/net.hpp"
+#include "caffe/caffe.hpp"
 
 namespace gg {
 
